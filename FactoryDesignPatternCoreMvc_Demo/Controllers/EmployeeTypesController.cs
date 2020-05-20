@@ -38,14 +38,14 @@ namespace FactoryDesignPatternCoreMvc_Demo.Controllers
             return View(employeeType);
         }
 
-        public IActionResult Create()
+        public IActionResult New()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(EmployeeType employeeType)
+        public async Task<IActionResult> New(EmployeeType employeeType)
         {
             if (ModelState.IsValid)
             {

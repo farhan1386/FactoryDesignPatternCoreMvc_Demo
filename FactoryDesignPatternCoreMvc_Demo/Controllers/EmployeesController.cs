@@ -45,7 +45,7 @@ namespace FactoryDesignPatternCoreMvc_Demo.Controllers
             return View(employee);
         }
 
-        public IActionResult Create()
+        public IActionResult New()
         {
             ViewData["DepartmentId"] = new SelectList(db.Departments, "Id", "DepartmentName");
             ViewData["EmployeeTypeId"] = new SelectList(db.EmployeeTypes, "Id", "EmployeeTypeName");
@@ -54,7 +54,7 @@ namespace FactoryDesignPatternCoreMvc_Demo.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Employee employee)
+        public async Task<IActionResult> New(Employee employee)
         {
             if (ModelState.IsValid)
             {

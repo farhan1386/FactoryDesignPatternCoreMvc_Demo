@@ -4,32 +4,30 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h3 class="text-uppercase text-center">list of employee type</h3>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="New" class="btn btn-sm btn-primary rounded-0"><i class="fas fa-plus-circle"></i> Add New</a>
 </p>
-<table class="table">
+<table class="table table-bordered">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.EmployeeTypeName)
+                @Html.DisplayNameFor(m => m.EmployeeTypeName)
             </th>
-            <th></th>
+            <th>Action(s)</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmployeeTypeName)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var employeeType in Model)
+        {
+            <tr>
+                <td><a asp-action="Details" asp-route-id="@employeeType.Id">@employeeType.EmployeeTypeName</a></td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@employeeType.Id" class="btn btn-sm btn-info rounded-0"><i class="fas fa-pencil-alt"></i></a>
+                    <a asp-action="Delete" asp-route-id="@employeeType.Id" class="btn btn-sm btn-danger rounded-0"><i class="fas fa-trash-alt"></i></a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

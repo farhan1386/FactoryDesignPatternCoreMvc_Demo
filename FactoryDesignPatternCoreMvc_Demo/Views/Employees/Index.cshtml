@@ -7,7 +7,7 @@
 <h3 class="text-uppercase text-center">List of Employees</h3>
 
 <p>
-    <a asp-action="Create" class="btn btn-primary rounded-0">Add New</a>
+    <a asp-action="New" class="btn btn-sm btn-primary rounded-0"><i class="fas fa-plus-circle"></i> Add New</a>
 </p>
 <table class="table table-bordered">
     <thead>
@@ -33,8 +33,8 @@
             <td>$ @employee.Bonus</td>
             <td>@employee.EmployeeType.EmployeeTypeName</td>
             <td>
-                <a asp-action="Edit" asp-route-id="@employee.Id" class="btn btn-sm btn-info rounded-0">Edit</a>
-                <a asp-action="Delete" asp-route-id="@employee.Id" class="btn btn-sm btn-danger rounded-0">Delete</a>
+                <a asp-action="Edit" asp-route-id="@employee.Id" class="btn btn-sm btn-info rounded-0"><i class="fas fa-pencil-alt"></i></a>
+                <a asp-action="Delete" asp-route-id="@employee.Id" class="btn btn-sm btn-danger rounded-0"><i class="fas fa-trash-alt"></i></a>
             </td>
         </tr>
 }

@@ -1,18 +1,17 @@
 ﻿@model FactoryDesignPatternCoreMvc_Demo.Models.EmployeeType
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "New";
 }
 
 <div class="card">
     <div class="card-header">
-        <h4 class="text-uppercase">Edit Employee Type</h4>
+        <h4 class="text-uppercase">Add New Employee Type</h4>
     </div>
     <div class="card-body">
         <div class="row">
             <div class="col-md-4">
-                <form asp-action="Edit">
-                    <input hidden asp-for="Id" />
+                <form asp-action="New">
                     <div class="form-group">
                         <label asp-for="EmployeeTypeName" class="control-label"></label>
                         <input asp-for="EmployeeTypeName" class="form-control" />

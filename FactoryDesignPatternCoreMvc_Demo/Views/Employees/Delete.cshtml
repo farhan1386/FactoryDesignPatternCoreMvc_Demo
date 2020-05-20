@@ -12,52 +12,53 @@
     <div class="card-body">
         <dl class="row">
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Name)
+                @Html.DisplayNameFor(m => m.Name)
             </dt>
             <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Name)
+                @Html.DisplayFor(m => m.Name)
             </dd>
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Position)
+                @Html.DisplayNameFor(m => m.Position)
             </dt>
             <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Position)
+                @Html.DisplayFor(m => m.Position)
             </dd>
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.EmployeeNumber)
+                @Html.DisplayNameFor(m => m.EmployeeNumber)
             </dt>
             <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.EmployeeNumber)
+                @Html.DisplayFor(m => m.EmployeeNumber)
             </dd>
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Department)
+                @Html.DisplayNameFor(m => m.Department)
             </dt>
             <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Department.DepartmentName)
+                @Html.DisplayFor(m => m.Department.DepartmentName)
             </dd>
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.HourlyPay)
+                @Html.DisplayNameFor(m => m.HourlyPay)
             </dt>
             <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.HourlyPay)
+                @Html.DisplayFor(m => m.HourlyPay)
             </dd>
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Bonus)
+                @Html.DisplayNameFor(m => m.Bonus)
             </dt>
             <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Bonus)
+                @Html.DisplayFor(m => m.Bonus)
             </dd>
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.EmployeeTypeId)
+                @Html.DisplayNameFor(m => m.EmployeeTypeId)
             </dt>
             <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.EmployeeType.EmployeeTypeName)
+                @Html.DisplayFor(m => m.EmployeeType.EmployeeTypeName)
             </dd>
         </dl>
         <form asp-action="Delete">
             <input type="hidden" asp-for="Id" />
-            <input type="submit" value="Delete" class="btn btn-danger rounded-0" />
-            <a asp-action="Index" class="btn btn-primary rounded-0">Back to List</a>
+            <button type="submit" class="btn btn-sm btn-danger rounded-0"><i class="fas fa-trash-alt"></i> Delete</button>
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-info rounded-0"><i class="fas fa-pencil-alt"></i> Edit</a>
+            <a asp-action="Index" class="btn btn-sm btn-primary rounded-0"><i class="fas fa-backward"></i> Back to List</a>
         </form>
     </div>
 </div>

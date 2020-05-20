@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using FactoryDesignPatternCoreMvc_Demo.Data;
 using FactoryDesignPatternCoreMvc_Demo.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace FactoryDesignPatternCoreMvc_Demo.Controllers
 {
@@ -41,14 +38,14 @@ namespace FactoryDesignPatternCoreMvc_Demo.Controllers
             return View(department);
         }
 
-        public IActionResult Create()
+        public IActionResult New()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Department department)
+        public async Task<IActionResult> New(Department department)
         {
             if (ModelState.IsValid)
             {
@@ -59,7 +56,6 @@ namespace FactoryDesignPatternCoreMvc_Demo.Controllers
             return View(department);
         }
 
-        // GET: Departments/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,7 +73,7 @@ namespace FactoryDesignPatternCoreMvc_Demo.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id,Department department)
+        public async Task<IActionResult> Edit(int id, Department department)
         {
             if (id != department.Id)
             {

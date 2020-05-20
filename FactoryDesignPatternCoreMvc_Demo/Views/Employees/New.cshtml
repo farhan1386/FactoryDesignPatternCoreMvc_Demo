@@ -1,7 +1,7 @@
 ﻿@model FactoryDesignPatternCoreMvc_Demo.Models.Employee
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "New";
 }
 
 <div class="card">
@@ -9,7 +9,7 @@
         <h4 class="text-uppercase">Add New Employee</h4>
     </div>
     <div class="card-body">
-        <form asp-action="Create">
+        <form asp-action="New">
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
@@ -40,6 +40,7 @@
                         <select asp-for="DepartmentId" class="form-control" asp-items="ViewBag.DepartmentId">
                             <option>Choose Department</option>
                         </select>
+                        <span asp-validation-for="DepartmentId" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -53,8 +54,8 @@
                 </div>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary rounded-0" />
-                <a asp-action="Index" class="btn btn-primary rounded-0">Back to List</a>
+                <input type="submit" value="Create" class="btn btn-sm btn-primary rounded-0" />
+                <a asp-action="Index" class="btn btn-sm btn-primary rounded-0"><i class="fas fa-backward"></i> Back to List</a>
             </div>
         </form>
     </div>
